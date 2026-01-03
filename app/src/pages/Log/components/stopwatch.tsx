@@ -30,7 +30,7 @@ function Stopwatch(
 
         id = requestAnimationFrame(tick);
         return () => cancelAnimationFrame(id);
-    }, [running]);
+    }, [running, setElapsed]);
 
     function toggle() {
         if (!running) {
