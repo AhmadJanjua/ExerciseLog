@@ -28,15 +28,19 @@ function AppLayout(): JSX.Element {
 }
 
 // sets the routing paths
-const App: DataRouter = createBrowserRouter([{
-    path: "/",
-    element: <AppLayout />,
-    children: [
-        { index: true, element: <Home /> },
-        { path: "log/:id?", element: <Log /> },
-        { path: "stats", element: <Stats /> },
-        { path: "manage", element: <Manage /> }
-    ],
-}]);
+const App: DataRouter = createBrowserRouter(
+    [{
+        path: "/",
+        element: <AppLayout />,
+        children: [
+            { index: true, element: <Home /> },
+            { path: "log/:id?", element: <Log /> },
+            { path: "stats", element: <Stats /> },
+            { path: "manage", element: <Manage /> },
+        ]
+    }],
+    { basename: import.meta.env.BASE_URL }
+);
+
 
 export default App;
